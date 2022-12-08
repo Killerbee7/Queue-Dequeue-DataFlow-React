@@ -82,7 +82,7 @@ class App extends Component {
           </div>
         </div>
         <div className="footer">
-         <p>Made by Dibya Dahal @ Business School <a href="https://github.com/Jessemwangi/palindromecheker/blob/master/src/Main.jsx">GitHub Link</a></p>
+         <p>Made by Dibya Dahal @ Business School <a href="https://github.com/Killerbee7/Palindrome_checker-react">GitHub Link</a></p>
          
         </div>
       </div>
