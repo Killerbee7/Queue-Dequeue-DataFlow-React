@@ -26,8 +26,7 @@ class App extends Component {
     let revText = (inputText.reverse(inputText).join("")).replace(re,'').toLowerCase()
 
     let result = this.state.text.replace(re ,'').toLowerCase() === revText;
-    console.log(inputText);
-    console.log(result);
+    
   
 
     if (result) {
@@ -82,7 +81,7 @@ class App extends Component {
             <p className="result_text">{this.state.result}</p>
           </div>
         </div>
-        <div class="footer">
+        <div className="footer">
          <p>Made by Dibya Dahal @ Business School <a href="https://github.com/Jessemwangi/palindromecheker/blob/master/src/Main.jsx">GitHub Link</a></p>
          
         </div>
