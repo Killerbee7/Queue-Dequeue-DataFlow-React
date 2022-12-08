@@ -23,9 +23,9 @@ class App extends Component {
 
     let re = /[^\w|_]/g;
     let inputText = this.state.text.split("");
-    let revText = (inputText.reverse(inputText).join("")).replace(re,'')
+    let revText = (inputText.reverse(inputText).join("")).replace(re,'').toLowerCase()
 
-    let result = this.state.text.replace(re ,'') === revText;
+    let result = this.state.text.replace(re ,'').toLowerCase() === revText;
     console.log(inputText);
     console.log(result);
   
@@ -48,8 +48,11 @@ class App extends Component {
   };
   render() {
     return (
-      <div className="app">
-        <h2>Palindrome Checker</h2>
+      <div className="container">
+
+        <header><h1>Palindrome Checker</h1></header>
+        <div className="app">
+     
         <div className="inputs">
           <form onSubmit={this.pallCheckHandler}>
             <div>
@@ -68,15 +71,15 @@ class App extends Component {
               Check
             </button>
 
-            <button id="refresh" onClick={this.reloadWindow}>
+            <button onClick={this.reloadWindow}>
               Refresh
             </button>
           </form>
           <div className="result_area">
-            <h3>Your Text: {this.state.text} </h3>
-            <h3>Reversed Text: {this.state.reverse}</h3> 
+            <h3>Your Text: <span>{this.state.text}</span>  </h3>
+            <h3>Reversed Text: <span>{this.state.reverse} </span></h3> 
             
-            <p className="result-txt">{this.state.result}</p>
+            <p className="result_text">{this.state.result}</p>
           </div>
         </div>
         <div class="footer">
@@ -84,7 +87,7 @@ class App extends Component {
          
         </div>
       </div>
-
+      </div>
    
     );
   }

@@ -11,7 +11,131 @@ body{
 
 
 .app{
+   
+        background: rgb(251, 194, 88);
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        margin: -50px 0 0 -50px;
+        display: flex;
+       justify-content: center;
+  
+}
+
+header{
+    padding: 30px;
+  text-align: center;
+  background: #525353;
+  color: white;
+  font-size: 30px;
+}
+
+.inputs {
+    padding-top: 50px;
+    height: 200px;
+    font-size: 15px;
+  }
+
+
+
+input {
+    background-color: #e4ece7;
+    border: none;
     
+    border-radius: 3px;
+    height: 50px;
+    width: 31.25rem;
+    font-size: 25px;
+    text-align: center;
+    color: black;
+
+    
+  }
+
+  input:focus {
+    outline: 3px solid #999;
+  }
+  
+
+
+/* CSS for buttons */
+button {
+    margin-left: 6rem;
+    margin-right: 0;
+    margin-top: 20px;
+    width: 6.25rem;
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+button:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+/*result Field*/
+
+.result_area{
+   margin-top: 20px;
+    height: 200px;
+    background-color: rgb(205, 203, 203);
+    width:31.25 ;
+}
+h3{
+    padding-left: 10px;
+    padding-top: 30px;
+    color: rgb(0, 0, 0);
+}
+
+.result_text{
+    background-color: #acaeca;
+    height: 80px;
+    color: red;
+    padding-left:10px ;
+    font-size: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+span{
+    color: blue;
+    font-size: 25px;
 }
 
 
@@ -26,6 +150,10 @@ body{
     background-color: rgb(86, 85, 85);
     color: white;
     text-align: center;
+ }
+
+ p{
+    padding-top: 15px;
  }
 
  a{
