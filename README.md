@@ -14,4 +14,7 @@
 ## Github Link
 ## [Press Me](https://github.com/Killerbee7/Palindrome_checker-react)
 
+## Live Link
+## [Press Me](https://github.com/Killerbee7/Palindrome_checker-react))
+
 
