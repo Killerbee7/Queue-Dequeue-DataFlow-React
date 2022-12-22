@@ -5,9 +5,8 @@ import "./App.css";
 class App extends Component {
   state = {
     text: "",
-   reverse: "",
+    reverse: "",
     result: "",
-   
   };
 
   textHandler = (e) => {
@@ -18,16 +17,17 @@ class App extends Component {
   };
 
   pallCheckHandler = (e) => {
-
     e.preventDefault();
 
     let re = /[^\w|_]/g;
     let inputText = this.state.text.split("");
-    let revText = (inputText.reverse(inputText).join("")).replace(re,'').toLowerCase()
+    let revText = inputText
+      .reverse(inputText)
+      .join("")
+      .replace(re, "")
+      .toLowerCase();
 
-    let result = this.state.text.replace(re ,'').toLowerCase() === revText;
-    
-  
+    let result = this.state.text.replace(re, "").toLowerCase() === revText;
 
     if (result) {
       this.setState({
@@ -48,46 +48,51 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-
-        <header><h1>Palindrome Checker</h1></header>
+        <header>
+          <h1>Palindrome Checker</h1>
+        </header>
         <div className="app">
-     
-        <div className="inputs">
-          <form onSubmit={this.pallCheckHandler}>
-            <div>
-              <input
-                type="text"
-                id="input_text"
-                onChange={this.textHandler}
-                placeholder="Input your text..."
-              />
-            </div>
-            <button
-              type="submit"
-              id="submit_check"
-              onClick={this.pallCheckHandler}
-            >
-              Check
-            </button>
+          <div className="inputs">
+            <form onSubmit={this.pallCheckHandler}>
+              <div>
+                <input
+                  type="text"
+                  id="input_text"
+                  onChange={this.textHandler}
+                  placeholder="Input your text..."
+                />
+              </div>
+              <button
+                type="submit"
+                id="submit_check"
+                onClick={this.pallCheckHandler}
+              >
+                Check
+              </button>
 
-            <button onClick={this.reloadWindow}>
-              Refresh
-            </button>
-          </form>
-          <div className="result_area">
-            <h3>Your Text: <span>{this.state.text}</span>  </h3>
-            <h3>Reversed Text: <span>{this.state.reverse} </span></h3> 
-            
-            <p className="result_text">{this.state.result}</p>
+              <button onClick={this.reloadWindow}>Refresh</button>
+            </form>
+            <div className="result_area">
+              <h3>
+                Your Text: <span>{this.state.text}</span>{" "}
+              </h3>
+              <h3>
+                Reversed Text: <span>{this.state.reverse} </span>
+              </h3>
+
+              <p className="result_text">{this.state.result}</p>
+            </div>
+          </div>
+          <div className="footer">
+            <p>
+              Made by Dibya Dahal @ Business School{" "}
+              <a href="https://github.com/Killerbee7/Palindrome_checker-react">
+                GitHub Link
+              </a>
+            </p>
           </div>
         </div>
-        <div className="footer">
-         <p>Made by Dibya Dahal @ Business School <a href="https://github.com/Killerbee7/Palindrome_checker-react">GitHub Link</a></p>
-         
-        </div>
       </div>
-      </div>
-   
     );
   }
 }
