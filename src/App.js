@@ -49,7 +49,7 @@ class App extends Component {
     return (
       <div className="container">
         <header>
-          <h1>Palindrome Checker</h1>
+          <h1>Palindrome Checkers</h1>
         </header>
         <div className="app">
           <div className="inputs">
@@ -85,7 +85,7 @@ class App extends Component {
           </div>
           <div className="footer">
             <p>
-              Made by Dibya Dahal @ Business School{" "}
+              Made by Dibya Dahal @ Business College{" "}
               <a href="https://github.com/Killerbee7/Palindrome_checker-react">
                 GitHub Link
               </a>
