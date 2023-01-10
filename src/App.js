@@ -1,100 +1,70 @@
-import React from "react";
-import { Component } from "react";
-import "./App.css";
-
-class App extends Component {
-  state = {
-    text: "",
-    reverse: "",
-    result: "",
-  };
-
-  textHandler = (e) => {
-    e.preventDefault();
-    this.setState({
-      text: e.target.value,
-    });
-  };
-
-  pallCheckHandler = (e) => {
-    e.preventDefault();
-
-    let re = /[^\w|_]/g;
-    let inputText = this.state.text.split("");
-    let revText = inputText
-      .reverse(inputText)
-      .join("")
-      .replace(re, "")
-      .toLowerCase();
-
-    let result = this.state.text.replace(re, "").toLowerCase() === revText;
-
-    if (result) {
-      this.setState({
-        result: "The text is a Palindrome.",
-        reverse: revText,
-      });
-    } else {
-      this.setState({
-        result: "The text is NOT a Palindrome.",
-        reverse: revText,
-      });
+import React, { useRef } from "react";
+import { useStackState } from "rooks";
+  
+export default function App() {
+    const numberToPushRef = useRef(3);
+    const [list, { push, pop, peek, length }, 
+        listInReverse] = useStackState([1, 2, 3]);
+  
+    function addToStack() {
+        numberToPushRef.current = numberToPushRef.current + 1;
+        push(numberToPushRef.current);
     }
-  };
-
-  reloadWindow = () => {
-    window.location.reload();
-  };
-  render() {
+  
     return (
-      <div className="container">
-        <header>
-          <h1>Palindrome Checkers</h1>
-        </header>
-        <div className="app">
-          <div className="inputs">
-            <form onSubmit={this.pallCheckHandler}>
-              <div>
-                <input
-                  type="text"
-                  id="input_text"
-                  onChange={this.textHandler}
-                  placeholder="Input your text..."
-                />
-              </div>
-              <button
-                type="submit"
-                id="submit_check"
-                onClick={this.pallCheckHandler}
-              >
-                Check
-              </button>
-
-              <button onClick={this.reloadWindow}>Refresh</button>
-            </form>
-            <div className="result_area">
-              <h3>
-                Your Text: <span>{this.state.text}</span>{" "}
-              </h3>
-              <h3>
-                Reversed Text: <span>{this.state.reverse} </span>
-              </h3>
-
-              <p className="result_text">{this.state.result}</p>
+        <><div style={{textAlign: 'center', marginTop: '10rem'}}>
+            <h1 style={{ color: 'red', margin: '20px' }}>
+                Stack</h1>
+            <div style={{
+             
+                display: 'block',
+                fontSize: '20px',
+                margin: '20px'
+            }}>
+                {listInReverse.map((item) => {
+                    return <div style={{
+                        width: '30px',
+                        height: '30px',
+                        background: '#a3fc9d',
+                        borderRadius: '5px',
+                        margin: '10px',
+                        marginLeft: '49%',
+                        textAlign: 'center'
+                    }}
+                        key={item}>{item}</div>;
+                })}
             </div>
-          </div>
-          <div className="footer">
-            <p>
-              Made by Dibya Dahal @ Business College{" "}
-              <a href="https://github.com/Killerbee7/Palindrome_checker-react">
-                GitHub Link
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
+            <button style={{
+                margin: '20px',
+                background: '#f8e1ee',
+                width: '200px',
+                borderRadius: '5px',
+                padding: '10px'
+            }}
+                onClick={addToStack}>Push</button>
+            <button style={{
+                margin: '20px',
+                background: '#bbfdd8',
+                width: '200px',
+                borderRadius: '5px',
+                padding: '10px'
+            }}
+                onClick={pop} warning>
+                Pop
+            </button>
+            <p style={{
+                color: '#e84917',
+                fontSize: '20px',
+                margin: '20px'
+            }}>Top Element : {peek()}</p>
+  
+            <p style={{
+                color: '#175ce8',
+                fontSize: '20px',
+                margin: '20px'
+            }}>Stack Size : {length}</p>
+            </div>
+  
+        </>
     );
-  }
 }
-
-export default App;
