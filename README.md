@@ -1,4 +1,4 @@
-#Stack Data Flow Model- Built on React
+#Queue Dequeue Data Flow Model- Built on React
 
 ### The project was an assignment of Database and Data Structure Class(teacher: Santosh Kalwar).
 
@@ -11,7 +11,7 @@
 
 
 ## Github Link
-## [Press Me](https://github.com/Killerbee7/StackDataFlow_React.git)
+## [Press Me](https://github.com/Killerbee7/Queue-Dequeue-DataFlow-React.git)
 
 
 
